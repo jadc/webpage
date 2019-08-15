@@ -1,40 +1,43 @@
 <html>
 	<head>
 		<title>jad</title>
-		<style>
-			body, html {
-				padding: 0;
-				margin: 0;
-				background-image: url(https://i.imgur.com/FAillHG.png);
-				background-size: 100% 100%;
-			}
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/png" href="assets/icon.ico">
 
-			div {
-				position: fixed;
-				text-align: center;
-
-				width: 20em;
-				height: 5em;
-
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-
-				margin: auto;
-				background-color: rgba(0, 0, 0, 0.75);
-				font-family: sans-serif;
-				color: white;
-				padding: 1em 3em 1em 3em;
-				border-radius: 20px;
-			}
-
-			h1 {
-				font-style: italic;
-			}
-		</style>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div><h1>under construction</h1></div>
+		<main>
+			<div class="logo">
+				<img src="assets/logo.png" alt="Logo">
+			</div>
+			<div class="desc">
+				<p>My name is <b>Jad C.</b></p>
+				<p>I'm a <span id="age">??</span> year old Lebanese male living in Canada.</p>
+			</div>
+			<div class="contact">
+
+				<a href="#discord">
+					<div class="button">
+						<img src="assets/buttons/discord.svg" alt="Discord">
+					</div>
+				</a>
+
+				<a href="https://github.com/jadc">
+					<div class="button">
+						<img src="assets/buttons/github.svg" alt="Github">
+					</div>
+				</a>
+
+				<a href="mailto:mail@jad.red">
+					<div class="button">
+						<img src="assets/buttons/gmail.svg" alt="Email">
+					</div>
+				</a>
+
+			</div>
+		</main>
+
+		<script src="script.js"></script>
 	</body>
 </html>
