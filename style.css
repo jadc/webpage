@@ -24,6 +24,19 @@ main {
 
   width: 100%;
   height: 100%;
+
+  /*animation: entrance 500ms ease-out;*/
+}
+
+@keyframes entrance {
+  0% {
+    transform: translateY(1em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .desc {
@@ -32,8 +45,6 @@ main {
   cursor: default;
   justify-content: center;
   margin: 1em;
-
-  background-color: orange;
 }
 
 .desc p {
@@ -41,6 +52,14 @@ main {
   text-align: center;
   color: white;
   text-transform: lowercase;
+  margin: 0 auto;
+}
+
+#info {
+  display: flex;
+  height: 4em;
+  align-items: center;
+  transition: 250ms opacity;
 }
 
 .logo {
@@ -49,7 +68,6 @@ main {
   background-repeat: no-repeat;
   background-position: bottom;
   margin: 1em;
-  background-color: orange;
 }
 
 .contact {
@@ -58,67 +76,35 @@ main {
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 1em;
-  background-color: orange;
 }
 
-.button {
-  width: 2.5em;
-  height: 2.5em;
+button {
+  width: 6em;
   border-radius: 50%;
-  padding: 1.25em;
-  margin: 1em;
+  margin: 0.5em;
   background-color: rgb(20, 20, 20);
-  transition: 100ms background-color;
   cursor: pointer;
+  
+  border: none;
+  outline: none;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
 }
 
-.button:hover {
+button:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+button:hover {
   background-color: rgb(30, 30, 30);
 }
 
-.button:active {
+button:active {
   background-color: rgb(40, 40, 40);
-}
-
-.toast {
-  position: relative;
-}
-
-.toast p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-align: center;
-  background-color: rgba(20, 20, 20);
-  border-radius: 2em;
-  width: 10em;
-  line-height: 1.5em;
-  margin-top: 2.5em;
-  padding: 0.5em 1em;
-  pointer-events: none;
-}
-
-.toast p::before {
-  position: absolute;
-  top: -1em;
-  left: 50%;
-  transform: translate(-50%);
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 1em solid transparent;
-  border-right: 1em solid transparent;
-
-  border-bottom: 1em solid rgba(20, 20, 20);
-}
-
-.toast p::after {
-  content: "Copied to clipboard.";
 }
 
 /* Desktop */
@@ -140,17 +126,5 @@ main {
 
   .desc {
     justify-content: flex-end;
-  }
-
-  #toast {
-    padding: 1em 2em;
-    border-top-left-radius: 1.5em;
-    border-top-right-radius: 1.5em;
-  }
-}
-
-@media (max-width: 1025px) {
-  #toast {
-    width: 100%;
   }
 }
