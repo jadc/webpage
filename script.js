@@ -1,55 +1,53 @@
+let lastID;
+
 (() => {
-  // Age
+  // Set age value
   document.getElementById("age").innerHTML = new Date().getFullYear() - 2003;
+
+  
+  for(let btn of document.getElementsByTagName("button")){
+
+    // Assigns icons to all buttons
+    btn.style.backgroundImage = `url(assets/buttons/${btn.id}.svg)`;
+
+    // Handles button functionality
+    btn.addEventListener("click", () => {
+
+      if(lastID == btn.id) return;
+      lastID = btn.id;
+
+      // Redirecting button
+      if(btn.getAttribute("url") != null){
+        return window.location.href = btn.getAttribute("url");
+      }
+
+      // Displays text button
+      if(btn.getAttribute("text") != null){
+        let text = "An error occured.";
+
+        switch(btn.id){
+          default:
+            break;
+          
+          case "discord":
+            text = "My Discord is <code>jad#7777</code>";
+            break;
+          
+          case "gmail":
+            text = "My Email is <code>mail@jad.red</code><br>Please don't spam it.";
+            break;
+        }
+
+        document.getElementById("info").style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById("info").children[0].innerHTML = text;
+          document.getElementById("info").style.opacity = 1;
+        }, 250);
+        return;
+      }
+
+    });
+
+  }
+
 })();
-
-function cpToClip(text) {
-  // Copy
-  let clicked = document.getElementById(event.srcElement.id);
-  let form = document.createElement("textarea");
-
-  form.style.position = "fixed";
-  form.style.top = 0;
-  form.style.left = 0;
-  form.style.width = "2em";
-  form.style.height = "2em";
-  form.style.padding = 0;
-  form.style.border = "none";
-  form.style.outline = "none";
-  form.style.boxShadow = "none";
-  form.style.background = "transparent";
-  form.value = text;
-  document.body.appendChild(form);
-  form.focus();
-  form.select();
-
-  try {
-    document.execCommand("copy");
-  } catch (err) {
-    alert("Failed to copy to clipboard.")
-  }
-
-  document.body.removeChild(form);
-
-  ///// Toast
-
-  // Remove any other toasts
-  let toasts = document.getElementsByClassName("toast");
-  while(toasts[0]){
-    toasts[0].parentNode.removeChild(toasts[0]);
-  }
-
-  // Create new toast
-  let toast = document.createElement("div");
-  toast.className = "toast";
-  let toastP = document.createElement("p");
-  toast.appendChild(toastP);
-  clicked.appendChild(toast);
-  setTimeout(() => {
-    clicked.removeChild(toast);
-  }, 5*1000);
-}
-
-function nav(url){
-  window.location.href = url;
-}
