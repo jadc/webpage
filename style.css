@@ -63,11 +63,11 @@ main {
 }
 
 .logo {
-  background-image: url("assets/logo.png");
+  background-image: url("https://raw.githubusercontent.com/jadc/branding/master/jad.svg?sanitize=true");
   background-size: 30vh;
   background-repeat: no-repeat;
   background-position: bottom;
-  margin: 1em;
+  margin: 2em;
 }
 
 .contact {
