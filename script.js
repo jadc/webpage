@@ -30,7 +30,7 @@ let lastID;
             break;
           
           case "discord":
-            text = "My Discord is <code>jad#7777</code>";
+            text = "My Discord is <code>jad#0001</code>";
             break;
           
           case "gmail":
