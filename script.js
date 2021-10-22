@@ -32,10 +32,6 @@ let lastID;
           case "discord":
             text = "My Discord is <code>jad#0024</code>";
             break;
-          
-          case "gmail":
-            text = "<code>jadchehimi0 at gmail dot com</code>";
-            break;
         }
 
         document.getElementById("info").style.opacity = 0;
