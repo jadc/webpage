@@ -1,0 +1,15 @@
+<html lang="{{ .Site.Language }}">
+    <head>
+        <title>{{ .Title | title }}</title>
+        {{ partial "meta.html" }}
+    </head>
+    <body>
+        {{ partial "nav.html" . }}
+        <section>
+            <a id='return' href="/">Back...</a>
+            <h1>{{ .Title | title }}</h1>
+            {{ partial "desc.html" . }}
+            {{ .Content }}
+        </section>
+    </body>
+</html>
