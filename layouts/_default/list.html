@@ -1,0 +1,35 @@
+<html lang="{{ .Site.Language }}">
+	<head>
+		<title>jad</title>
+        {{ partial "meta.html" }}
+	</head>
+	<body>
+        {{ partial "nav.html" . }}
+        <main>
+            <div class="category">
+                <h1>Projects</h1>
+                {{ range (where .Site.Pages "Section" "project") }}
+                <a href='{{ .RelPermalink }}'>
+                    <article>
+                        <h2>{{ .Title }}</h2>
+                        {{ partial "desc.html" . }}
+                        <p>{{ .Summary | truncate 48 }}</p>
+                    </article>
+                </a>
+                {{ end }}
+            </div>
+            <div class="category">
+                <h1>Blog</h1>
+                {{ range (where .Site.Pages "Section" "blog") }}
+                <a href='{{ .RelPermalink }}'>
+                    <article>
+                        <h2>{{ .Title }}</h2>
+                        {{ partial "desc.html" . }}
+                        <p>{{ .Summary | truncate 48 }}</p>
+                    </article>
+                </a>
+                {{ end }}
+            </div>
+        </main>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+title = 'jad'
+baseURL = 'https://jad.red'
+languageCode = 'en-us'
+enableGitInfo = true
+disableKinds = ['taxonomy', 'term', 'section']
+
+[params]
+  favicon = '/icon.svg'
+
+[taxonomies]
