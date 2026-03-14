@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @font-face {
     font-family: "JetBrains Mono";
@@ -10,21 +11,21 @@
 
 @theme {
     --font-sans: "JetBrains Mono", monospace;
-    --color-bg-50: #f5f3f7;
-    --color-bg-100: #e8e4ed;
-    --color-bg-200: #d1c9db;
-    --color-bg-300: #b3a6c3;
-    --color-bg-400: #8e7da5;
-    --color-bg-500: #6b5a87;
-    --color-bg-600: #4d3f64;
-    --color-bg-700: #332a45;
-    --color-bg-800: #1e182b;
-    --color-bg-900: #0e0b13;
-    --color-bg-950: #07050a;
+    --color-main-50: #f5f3f7;
+    --color-main-100: #e8e4ed;
+    --color-main-200: #d1c9db;
+    --color-main-300: #b3a6c3;
+    --color-main-400: #8e7da5;
+    --color-main-500: #6b5a87;
+    --color-main-600: #4d3f64;
+    --color-main-700: #332a45;
+    --color-main-800: #1e182b;
+    --color-main-900: #0e0b13;
+    --color-main-950: #07050a;
 }
 
 body {
-    background-color: var(--color-bg-900);
+    background-color: var(--color-main-900);
     color: white;
     font-size: 1rem;
     line-height: 1.54;
