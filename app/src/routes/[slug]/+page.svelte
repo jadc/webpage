@@ -1,9 +1,35 @@
 <script lang="ts">
     import { resolve } from "$app/paths";
     import Image from "$lib/Image.svelte";
+    import { SITE_URL, SITE_TITLE } from "$lib/meta";
 
     let { data } = $props();
+
+    const url = $derived(`${SITE_URL}/${data.meta.slug}`);
+    const image = $derived(data.meta.thumbnail ? `${SITE_URL}/${data.meta.slug}/${data.meta.thumbnail}` : undefined);
 </script>
+
+<svelte:head>
+    <title>{data.meta.title} - {SITE_TITLE}</title>
+    <meta name="description" content={data.meta.description} />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={data.meta.title} />
+    <meta property="og:description" content={data.meta.description} />
+    <meta property="og:url" content={url} />
+    {#if image}
+        <meta property="og:image" content={image} />
+    {/if}
+
+    <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={data.meta.title} />
+    <meta name="twitter:description" content={data.meta.description} />
+    {#if image}
+        <meta name="twitter:image" content={image} />
+    {/if}
+
+    <meta property="article:published_time" content={new Date(data.meta.date).toISOString()} />
+</svelte:head>
 
 <article class="py-6">
     <header class="mb-8 border-b border-main-700 pb-6">
