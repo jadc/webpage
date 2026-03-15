@@ -27,7 +27,6 @@ jobs:
             - name: Build
               env:
                   GH_TOKEN: ${{ secrets.GH_TOKEN }}
-                  BASE_PATH: "/${{ github.event.repository.name }}"
               run: bun run build
 
             - name: Upload Artifacts
