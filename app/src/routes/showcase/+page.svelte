@@ -5,7 +5,7 @@
     let { data } = $props();
 
     const title = `Showcase - ${SITE_TITLE}`;
-    const description = "A showcase of my projects and open-source work.";
+    const description = "A showcase of my projects.";
 </script>
 
 <svelte:head>
