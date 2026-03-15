@@ -9,7 +9,7 @@ permissions:
     id-token: write
 
 jobs:
-    build_site:
+    build:
         runs-on: ubuntu-latest
         defaults:
             run:
@@ -26,6 +26,7 @@ jobs:
 
             - name: Build
               env:
+                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
                   BASE_PATH: "/${{ github.event.repository.name }}"
               run: bun run build
 
@@ -35,7 +36,7 @@ jobs:
                   path: "app/build/"
 
     deploy:
-        needs: build_site
+        needs: build
         runs-on: ubuntu-latest
 
         environment:
