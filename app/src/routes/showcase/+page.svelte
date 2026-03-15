@@ -9,6 +9,7 @@
         title={repo.title}
         description={repo.description}
         tags={repo.tags}
+        languages={repo.languages}
         thumbnail={repo.thumbnail}
         href={repo.href}
     />
