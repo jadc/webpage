@@ -1,6 +1,6 @@
 import { mdsvex } from "mdsvex";
 import adapter from "@sveltejs/adapter-static";
-import { remarkRewriteAssets } from "./src/lib/remark/rewrite-assets.ts";
+import { remarkRewriteAssets } from "./src/lib/remark/rewrite-assets.js";
 
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
