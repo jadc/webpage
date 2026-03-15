@@ -8,4 +8,5 @@
     } = $props();
 </script>
 
-<img src={resolve(src as "/")} {alt} class="mx-auto max-h-128 rounded object-contain {className}" />
+<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- src may be an external URL -->
+<img src={src.startsWith("http") ? src : resolve(src as "/")} {alt} class="mx-auto max-h-128 rounded object-contain {className}" />
