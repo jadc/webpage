@@ -11,7 +11,7 @@
         description={post.description}
         date={post.date}
         tags={post.tags}
-        thumbnail={post.thumbnail}
+        thumbnail={post.thumbnail ? `/${post.slug}/${post.thumbnail}` : undefined}
         href={resolve(`/${post.slug}` as "/")}
     />
 {/each}
